@@ -77,5 +77,5 @@ namespace EasyCharmTest
             lmb.DeserializeJson(LogicManagerBuilder.JsonType.Locations, "[{\"name\": \""+ Constants.LOCATION_NAME + "\",\"logic\": \""+Constants.LOCATION_SCENE+"\"}]");
         }
     }
-    }
+ }
 
