@@ -33,8 +33,10 @@ namespace EasyCharmTest
             Instance = this;
             Log("Initialized");
             On.HeroController.Update += HeroController_Update;
+            bool rando = ModHooks.GetMod("Randomizer 4") is Mod;
             bool ic = ModHooks.GetMod("ItemChangerMod") is Mod;
-            if (ic) { 
+
+            if (rando && ic) { 
                 RandoItem.InitRandoConnection();
             }
         }

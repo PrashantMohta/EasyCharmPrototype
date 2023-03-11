@@ -15,7 +15,7 @@ namespace EasyCharmTest
         public const string ITEM_NAME = "potato_item";
 
         /// <summary>
-        /// Name of a location to which an item will be randomized to
+        /// Name of your location to which some item will be randomized to
         /// </summary>
         public const string LOCATION_NAME = "potato_location";
 
@@ -23,14 +23,21 @@ namespace EasyCharmTest
         /// Scene Name for your location
         /// </summary>
         public const string LOCATION_SCENE = "Tutorial_01";
+
         /// <summary>
         /// X coordinate for your location
         /// </summary>
         public const float LOCATION_X = 38f;
+
         /// <summary>
         /// Y coordinate for your location
         /// </summary>
         public const float LOCATION_Y = 11f;
+
+        /// <summary>
+        /// The Logic defining the constraints that a player must meet to be able to access your location
+        /// </summary>
+        public const string LOCATION_LOGIC = "Tutorial_01[right1] | Tutorial_01[top1] | Tutorial_01[top2]";
 
     }
 
@@ -73,8 +80,11 @@ namespace EasyCharmTest
 
         private static void AddItemAndLogic(GenerationSettings gs, LogicManagerBuilder lmb)
         {
+            //Here we define that our item does not make any changes to the reachability of locations
             lmb.AddItem(new EmptyItem(Constants.ITEM_NAME));
-            lmb.DeserializeJson(LogicManagerBuilder.JsonType.Locations, "[{\"name\": \""+ Constants.LOCATION_NAME + "\",\"logic\": \""+Constants.LOCATION_SCENE+"\"}]");
+
+            //Here we define that our location is accessible when certain logic is met, you will need to modify this for your location
+            lmb.DeserializeJson(LogicManagerBuilder.JsonType.Locations, "[{\"name\": \""+ Constants.LOCATION_NAME + "\",\"logic\": \""+ Constants.LOCATION_LOGIC + "\"}]");
         }
     }
  }
