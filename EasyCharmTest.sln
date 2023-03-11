@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32407.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyCharmTest", "EasyCharmTest.csproj", "{277441EA-3239-41C2-9085-49A68197B68F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testmod", "..\testmod\testmod.csproj", "{6D4AA7D9-5A91-450E-84CE-5651F4CD76D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{277441EA-3239-41C2-9085-49A68197B68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{277441EA-3239-41C2-9085-49A68197B68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{277441EA-3239-41C2-9085-49A68197B68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4AA7D9-5A91-450E-84CE-5651F4CD76D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4AA7D9-5A91-450E-84CE-5651F4CD76D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4AA7D9-5A91-450E-84CE-5651F4CD76D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4AA7D9-5A91-450E-84CE-5651F4CD76D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

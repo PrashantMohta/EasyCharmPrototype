@@ -1,10 +1,8 @@
 ﻿using Modding;
-using System;
-using System.Collections;
+using Satchel;
+using SFCore;
 using System.Collections.Generic;
 using UnityEngine;
-using UObject = UnityEngine.Object;
-using Satchel;
 
 namespace EasyCharmTest
 {
@@ -35,6 +33,10 @@ namespace EasyCharmTest
             Instance = this;
             Log("Initialized");
             On.HeroController.Update += HeroController_Update;
+            bool ic = ModHooks.GetMod("ItemChangerMod") is Mod;
+            if (ic) { 
+                RandoItem.InitRandoConnection();
+            }
         }
 
         private void HeroController_Update(On.HeroController.orig_Update orig, HeroController self)

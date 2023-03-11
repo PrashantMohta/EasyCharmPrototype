@@ -328,6 +328,15 @@
 	  <Reference Include="Satchel">
 		  <HintPath>$(HollowKnightRefs)/Mods/Satchel/Satchel.dll</HintPath>
 	  </Reference>
+	  <Reference Include="ItemChanger">
+		  <HintPath>$(HollowKnightRefs)/Mods/ItemChanger/ItemChanger.dll</HintPath>
+	  </Reference>
+	  <Reference Include="RandomizerCore">
+		  <HintPath>$(HollowKnightRefs)/Mods/RandomizerCore/RandomizerCore.dll</HintPath>
+	  </Reference>
+	  <Reference Include="RandomizerMod">
+		  <HintPath>$(HollowKnightRefs)/Mods/Randomizer 4/RandomizerMod.dll</HintPath>
+	  </Reference>
   </ItemGroup>
   <ItemGroup>
 	  <EmbeddedResource Include="*.png" />
