@@ -43,38 +43,39 @@ namespace EasyCharmTest
             }
         }
 
-        public class RandoItem
+    public class RandoItem
+    {
+        // call this in Initialize of your mod after checking if ItemChanger is available
+        public static void InitRandoConnection()
         {
-            public static void InitRandoConnection()
-            {
-                // Define your Custom Location and Custom item
-                Finder.DefineCustomLocation(new CoordinateLocation {
-                    name = Constants.LOCATION_NAME,
-                    sceneName = Constants.LOCATION_SCENE,
-                    x = Constants.LOCATION_X,
-                    y= Constants.LOCATION_Y, 
-                    flingType = FlingType.DirectDeposit 
-                });
-                Finder.DefineCustomItem(new CustomItem { name = Constants.ITEM_NAME });
+            // Define your Custom Location and Custom item
+            Finder.DefineCustomLocation(new CoordinateLocation {
+                name = Constants.LOCATION_NAME,
+                sceneName = Constants.LOCATION_SCENE,
+                x = Constants.LOCATION_X,
+                y= Constants.LOCATION_Y, 
+                flingType = FlingType.DirectDeposit 
+            });
+            Finder.DefineCustomItem(new CustomItem { name = Constants.ITEM_NAME });
                 
-                // Add item to rando (and define how it impacts logic) & the logic required to consider the location "reachable"
-                RCData.RuntimeLogicOverride.Subscribe(50f, AddItemAndLogic);
+            // Add item to rando (and define how it impacts logic) & the logic required to consider the location "reachable"
+            RCData.RuntimeLogicOverride.Subscribe(50f, AddItemAndLogic);
 
-                // Add the item & location to RequestBuilder the thing that makes it do the randomizing
-                RequestBuilder.OnUpdate.Subscribe(0.3f, AddLocationAndItemToRandomization);
-            }
-
-            private static void AddLocationAndItemToRandomization(RequestBuilder rb)
-            {
-                rb.AddItemByName(Constants.ITEM_NAME);
-                rb.AddLocationByName(Constants.LOCATION_NAME);
-            }
-
-            private static void AddItemAndLogic(GenerationSettings gs, LogicManagerBuilder lmb)
-            {
-                lmb.AddItem(new EmptyItem(Constants.ITEM_NAME));
-                lmb.DeserializeJson(LogicManagerBuilder.JsonType.Locations, "[{\"name\": \""+ Constants.LOCATION_NAME + "\",\"logic\": \""+Constants.LOCATION_SCENE+"\"}]");
-            }
+            // Add the item & location to RequestBuilder the thing that makes it do the randomizing
+            RequestBuilder.OnUpdate.Subscribe(0.3f, AddLocationAndItemToRandomization);
         }
+
+        private static void AddLocationAndItemToRandomization(RequestBuilder rb)
+        {
+            rb.AddItemByName(Constants.ITEM_NAME);
+            rb.AddLocationByName(Constants.LOCATION_NAME);
+        }
+
+        private static void AddItemAndLogic(GenerationSettings gs, LogicManagerBuilder lmb)
+        {
+            lmb.AddItem(new EmptyItem(Constants.ITEM_NAME));
+            lmb.DeserializeJson(LogicManagerBuilder.JsonType.Locations, "[{\"name\": \""+ Constants.LOCATION_NAME + "\",\"logic\": \""+Constants.LOCATION_SCENE+"\"}]");
+        }
+    }
     }
 
