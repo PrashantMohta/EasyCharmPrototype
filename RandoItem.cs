@@ -15,7 +15,7 @@ namespace EasyCharmTest
         public const string ITEM_NAME = "potato_item";
 
         /// <summary>
-        /// Name of your location to which some item will be randomized to
+        /// Name of your location to which some item will be randomized to (This needs to be unique)
         /// </summary>
         public const string LOCATION_NAME = "potato_location";
 
